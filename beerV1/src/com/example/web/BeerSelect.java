@@ -9,9 +9,17 @@ public void doPost(HttpServletRequest request,
 HttpServletResponse response)
 throws IOException, ServletException {
 
-String c = request.getParameter("color");
+String colorParam = request.getParameter("color");
+String bodyParam = request.getParameter("body");
+String[] sizeParam = request.getParameterValues("sizes");
+String sizeStr = "";
+if(sizeParam!=null && sizeParam.length > 0) {
+	for(String temp: sizeParam) {
+		sizeStr = sizeStr + temp + " ";
+	}	
+}
 BeerExpert be = new BeerExpert();
-List result = be.getBrands(c);
+List result = be.getBrands(colorParam,bodyParam,sizeStr);
 
 request.setAttribute("styles", result);
 RequestDispatcher view =
