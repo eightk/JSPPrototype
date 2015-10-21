@@ -13,7 +13,7 @@ import org.xml.sax.helpers.DefaultHandler;
  *
  * @author hp
  */
-public class mySAX extends DefaultHandler {
+public class MySAX extends DefaultHandler {
 
     @Override
     public void startDocument() throws SAXException {

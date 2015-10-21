@@ -18,7 +18,7 @@ import org.dom4j.io.XMLWriter;
  *
  * @author hp
  */
-public class dom4jWriter {
+public class Dom4jWriter {
     public static void main(String args[]) {
         Document doc = DocumentHelper.createDocument();
         Element foodlist = doc.addElement("foodlist");

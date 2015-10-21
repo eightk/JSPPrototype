@@ -13,7 +13,7 @@ import org.jdom2.input.SAXBuilder;
  *
  * @author hp
  */
-public class readXML {
+public class ReadXML {
 
     public static void main(String args[]) throws Exception {
         SAXBuilder builder = new SAXBuilder();

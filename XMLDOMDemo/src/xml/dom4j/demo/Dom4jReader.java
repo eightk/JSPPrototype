@@ -16,7 +16,7 @@ import org.dom4j.io.SAXReader;
  *
  * @author hp
  */
-public class dom4jReader {
+public class Dom4jReader {
 
     public static void main(String[] args) {
         File file = new File("src/xml/dom4j/demo/dom4jWriterResult.xml");

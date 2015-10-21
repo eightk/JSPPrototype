@@ -14,7 +14,7 @@ import org.jdom2.output.XMLOutputter;
  *
  * @author hp
  */
-public class writeXML {
+public class WriteXML {
 
     public static void main(String[] args) {    
         Element foodlist = new Element("foodlist");

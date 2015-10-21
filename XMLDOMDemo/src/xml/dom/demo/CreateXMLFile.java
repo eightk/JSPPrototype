@@ -21,7 +21,7 @@ import org.w3c.dom.Element;
  *
  * @author hp
  */
-public class createXMLFile {
+public class CreateXMLFile {
     /**
      * @param args the command line arguments
      */

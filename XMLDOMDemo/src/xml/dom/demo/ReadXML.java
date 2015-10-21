@@ -20,7 +20,7 @@ import org.xml.sax.SAXException;
  *
  * @author hp
  */
-public class readXML {
+public class ReadXML {
 
     /**
      * @param args the command line arguments

@@ -12,10 +12,10 @@ import javax.xml.parsers.SAXParserFactory;
  *
  * @author hp
  */
-public class testSAX {
+public class TestSAX {
     public static void main(String args[]) throws Exception {
         SAXParserFactory factory = SAXParserFactory.newInstance();
         SAXParser parser = factory.newSAXParser();
-        parser.parse("src/xml/dom/demo/createResult.xml", new mySAX());
+        parser.parse("src/xml/dom/demo/createResult.xml", new MySAX());
     }
 }
