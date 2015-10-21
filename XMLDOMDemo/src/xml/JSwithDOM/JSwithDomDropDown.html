@@ -1,0 +1,29 @@
+<html>
+	<head>
+		<title> JS with DOM demo drop down</title>
+		<script language = "JavaScript">
+			function setFun() {
+			var id = new Array(1,2,3);
+			var value = new Array("Meat","Vegetable","Fruit");
+				var select = document.getElementById("area");
+				select.length = 1;
+				select.options[0].selected = true;
+				for (var x=0; x<id.length; x++) {
+					/*use dom to create corresponding html section*/				
+					var option = document.createElement("option");
+					option.setAttribute("value",id[x]);
+					option.appendChild(document.createTextNode(value[x]));
+					select.appendChild(option);
+				}
+			}
+		</script>
+	</head>
+	
+	<body onLoad= "setFun()">
+		<form>
+			<select name = "area" id= "area">
+				<option value = "0"> Food Type </option>
+			</select>
+		</form>
+	</body>
+</html>

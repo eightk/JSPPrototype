@@ -1,0 +1,33 @@
+<html>
+	<head>
+		<title> JS with DOM demo table insert & delete row</title>
+		<script language = "JavaScript">
+			function addrow() {
+				var table = document.getElementById("mytable");
+				var tr = table.insertRow();
+				var td1 = tr.insertCell();
+				var td2 = tr.insertCell();
+				var td3 = tr.insertCell();
+				var td4 = tr.insertCell();
+				var td5 = tr.insertCell();
+				td1.innerHTML = "name: <input type = 'text'/><br/>";
+				td2.innerHTML = "price: <input type = 'text'/><br/>";
+				td3.innerHTML = "description: <input type = 'text'/><br/>";
+				td4.innerHTML = "calories: <input type = 'text'/><br/>";
+				td5.innerHTML = "<input type = 'button' value='-' onClick = 'deleterow(this);'/><br/>";
+			}
+			function deleterow(btn) {
+				var tr = btn.parentNode.parentNode;
+				var table = document.getElementById("mytable");
+				table.deleteRow(tr.rowIndex);				
+			}
+		</script>
+	</head>
+	
+	<body>
+		<input type = "button" value = "+" onClick = "addrow();">
+		<table id = "mytable" border = "1">
+			
+		</table>
+	</body>
+</html>

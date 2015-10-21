@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<foodlist>
+  <food>
+    <name>banana</name>
+    <price>$0.59/lb</price>
+    <description>BANANA!!!!</description>
+    <calories>200-240 ea</calories>
+  </food>
+</foodlist>
