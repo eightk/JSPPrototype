@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+    version="2.5">
+	
+	<servlet> 
+		<servlet-name>hello</servlet-name>
+		<servlet-class>servlet.demo.HelloServlet</servlet-class>
+	</servlet>
+	<servlet-mapping> 
+		<servlet-name>hello</servlet-name>
+		<url-pattern>/helloServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet> 
+		<servlet-name>input</servlet-name>
+		<servlet-class>servlet.demo.InputServlet</servlet-class>
+	</servlet>
+	<servlet-mapping> 
+		<servlet-name>input</servlet-name>
+		<url-pattern>/inputServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet> 
+		<servlet-name>initParam</servlet-name>
+		<servlet-class>servlet.demo.InitParamServlet</servlet-class>
+		<init-param>
+			<param-name> ref </param-name>
+			<param-value> this is the value </param-value>
+		</init-param>
+	</servlet>
+	<servlet-mapping> 
+		<servlet-name>initParam</servlet-name>
+		<url-pattern>/initParamServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet> 
+		<servlet-name>httpSession</servlet-name>
+		<servlet-class>servlet.demo.HttpSessionDemoServlet</servlet-class>
+	</servlet>
+	<servlet-mapping> 
+		<servlet-name>httpSession</servlet-name>
+		<url-pattern>/httpSessionDemoServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet> 
+		<servlet-name>ServletContext</servlet-name>
+		<servlet-class>servlet.demo.ServletContextDemoServlet</servlet-class>
+	</servlet>
+	<servlet-mapping> 
+		<servlet-name>ServletContext</servlet-name>
+		<url-pattern>/servletContextDemoServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet> 
+		<servlet-name>ClientRedirect</servlet-name>
+		<servlet-class>servlet.demo.ClientRedirectDemo</servlet-class>
+	</servlet>
+	<servlet-mapping> 
+		<servlet-name>ClientRedirect</servlet-name>
+		<url-pattern>/clientRedirectDemo</url-pattern>
+	</servlet-mapping>
+	
+	<servlet> 
+		<servlet-name>ServerRedirect</servlet-name>
+		<servlet-class>servlet.demo.ServerRedirectDemo</servlet-class>
+	</servlet>
+	<servlet-mapping> 
+		<servlet-name>ServerRedirect</servlet-name>
+		<url-pattern>/serverRedirectDemo</url-pattern>
+	</servlet-mapping>
+	
+	<display-name> Welcome to Tomcat </display-name>
+
+    <description>
+		Welcome to Tomcat
+	</description>
+
+</web-app>
