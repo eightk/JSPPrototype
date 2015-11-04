@@ -72,6 +72,53 @@
 		<url-pattern>/serverRedirectDemo</url-pattern>
 	</servlet-mapping>
 	
+	<servlet> 
+		<servlet-name>Login</servlet-name>
+		<servlet-class>servlet.demo.mvc.controller.LoginServlet</servlet-class>
+	</servlet>
+	<servlet-mapping> 
+		<servlet-name>Login</servlet-name>
+		<url-pattern>/JSP/LoginServlet</url-pattern>
+	</servlet-mapping>
+	
+	<filter>
+		<filter-name> simple </filter-name>
+		<filter-class> servlet.demo.filter.SimpleFilter</filter-class>
+		<init-param>
+			<param-name>ref</param-name>
+			<param-value>HELLO REF</param-value>
+		</init-param>
+	</filter>
+	
+	<filter-mapping> 
+		<filter-name>simple</filter-name>
+		<url-pattern>/JSP/*</url-pattern>
+	</filter-mapping>
+	<!--
+	<filter>
+		<filter-name> encoding </filter-name>
+		<filter-class> servlet.demo.filter.EncodingFilter</filter-class>
+		<init-param>
+			<param-name>charset</param-name>
+			<param-value>UTF-8</param-value>
+		</init-param>
+	</filter>
+	
+	<filter-mapping> 
+		<filter-name>encoding</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	-->
+	<filter>
+		<filter-name> login </filter-name>
+		<filter-class> servlet.demo.filter.LoginFilter</filter-class>
+	</filter>
+	
+	<filter-mapping> 
+		<filter-name>login</filter-name>
+		<url-pattern>/JSP/login.jsp</url-pattern>
+	</filter-mapping>
+	
 	<display-name> Welcome to Tomcat </display-name>
 
     <description>
