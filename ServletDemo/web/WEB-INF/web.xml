@@ -94,9 +94,10 @@
 		<filter-name>simple</filter-name>
 		<url-pattern>/JSP/*</url-pattern>
 	</filter-mapping>
-	<!--
+	
+	<!--If it is not the last filter, we must put chain.doFilter in the doFilter method otherwise it will block the after filter from executing and it will block the website as well.-->
 	<filter>
-		<filter-name> encoding </filter-name>
+		<filter-name>encoding</filter-name>
 		<filter-class> servlet.demo.filter.EncodingFilter</filter-class>
 		<init-param>
 			<param-name>charset</param-name>
@@ -106,9 +107,9 @@
 	
 	<filter-mapping> 
 		<filter-name>encoding</filter-name>
-		<url-pattern>/*</url-pattern>
+		<url-pattern>/JSP/*</url-pattern>
 	</filter-mapping>
-	-->
+	
 	<filter>
 		<filter-name> login </filter-name>
 		<filter-class> servlet.demo.filter.LoginFilter</filter-class>

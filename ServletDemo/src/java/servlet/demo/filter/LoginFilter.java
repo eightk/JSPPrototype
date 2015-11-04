@@ -23,10 +23,12 @@ public class LoginFilter implements Filter {
 
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
+        System.out.println("      init login filter");
     }
 
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
+        System.out.println("      before doing login filter");
         HttpServletRequest req = (HttpServletRequest)request;
         HttpSession ses = req.getSession();
         if(ses.getAttribute("username")!=null) {
@@ -34,6 +36,7 @@ public class LoginFilter implements Filter {
         } else {
             request.getRequestDispatcher("login.jsp").forward(request, response);
         }
+        System.out.println("      after doing login filter");
     }
 
     @Override

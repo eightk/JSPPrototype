@@ -22,11 +22,15 @@ public class EncodingFilter implements Filter {
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
         this.charSet = filterConfig.getInitParameter("charset");
+        System.out.println("   init encoding filter: " + charSet);
     }
 
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
+        System.out.println("   setting encoding filter: " + charSet);
         request.setCharacterEncoding(this.charSet);
+        chain.doFilter(request, response);
+        System.out.println("   after setting encoding filter: " + charSet);
     }
 
     @Override
