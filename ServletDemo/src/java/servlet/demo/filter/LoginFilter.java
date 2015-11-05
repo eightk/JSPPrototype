@@ -35,7 +35,7 @@ public class LoginFilter implements Filter {
             chain.doFilter(request, response);
         } else {
             request.getRequestDispatcher("login.jsp").forward(request, response);
-        }
+        }        
         System.out.println("      after doing login filter");
     }
 
