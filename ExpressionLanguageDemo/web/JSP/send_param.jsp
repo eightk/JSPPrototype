@@ -14,6 +14,7 @@
     <body>
         <h1>Send Param</h1>
         <form action="get_param.jsp" method="post">
+            user name: <input type="text" name="username"/>
             <input type="checkbox" name ="ary" value="pork"/>Pork<br/>
             <input type="checkbox" name ="ary" value="beef"/>Beef<br/>
             <input type="checkbox" name ="ary" value="Chickent"/>Chicken<br/>

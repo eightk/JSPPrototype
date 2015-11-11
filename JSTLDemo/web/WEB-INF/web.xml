@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	 xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+	 version="3.1">
+    <jsp-config>
+        <!--have to add the .tld at the taglib-location otherwise cannot find the file-->
+        <taglib>
+            <taglib-uri>c</taglib-uri>
+            <taglib-location>/WEB-INF/tlds/c.tld</taglib-location>
+        </taglib>
+        <taglib>
+            <taglib-uri>fn</taglib-uri>
+            <taglib-location>/WEB-INF/tlds/fn.tld</taglib-location>
+        </taglib>
+        <taglib>
+            <taglib-uri>fmt</taglib-uri>
+            <taglib-location>/WEB-INF/tlds/fmt.tld</taglib-location>
+        </taglib>
+        <taglib>
+            <taglib-uri>sql</taglib-uri>
+            <taglib-location>/WEB-INF/tlds/sql.tld</taglib-location>
+        </taglib>
+        <taglib>
+            <taglib-uri>x</taglib-uri>
+            <taglib-location>/WEB-INF/tlds/x.tld</taglib-location>
+        </taglib>
+    </jsp-config>
+    
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+</web-app>

@@ -13,6 +13,7 @@
     </head>
     <body>
         <h1>Get Param</h1>
+        <h3>${param.username}</h3>
         <h3>${paramValues.ary[0]}</h3>
         <h3>${paramValues.ary[1]}</h3>
         <h3>${paramValues.ary[2]}</h3>
