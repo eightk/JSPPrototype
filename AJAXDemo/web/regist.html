@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Register</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <script language = "JavaScript">
+            var xmlHttp;
+            var flag;
+            function createXMLHttp() {
+                if (window.XMLHttpRequest) {
+                    xmlHttp = new XMLHttpRequest();
+                } else {
+                    xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
+                }
+            }
+            function checkUsername(username) {
+                createXMLHttp();
+                xmlHttp.open("POST", "checkServlet?username=" + username);
+                xmlHttp.onreadystatechange = checkUsernameCallback;
+                xmlHttp.send(null);
+                document.getElementById("msg").innerHTML = "Verifying ...";
+            }
+            function checkUsernameCallback() {
+                if (xmlHttp.readyState == 4) {
+                    if (xmlHttp.status == 200) {
+                        var text = xmlHttp.responseText;
+                        if (text == "true") {
+                            flag = false;
+                            document.getElementById("msg").innerHTML = "User name has been registered!"
+                        } else {
+                            flag = true;
+                            document.getElementById("msg").innerHTML = "User name can be used!";
+                        }
+                    }
+                }
+            }
+            function checkForm() {
+                return flag;
+            }
+        </script>
+        <h1>Register</h1>
+        <form action="regist.jsp" method="post" onsubmit="return checkForm()">
+            <h3>onblur doesnt work for chrome... unless u set tabindex="0" along with it</h3>
+            User name: <input type="text" tabindex="0" name="username" onblur="checkUsername(this.value)"/> <span id = "msg"></span><br/>
+            Password: <input type="password" name="password"/> <br/>
+            <input type="submit" value="submit"/> <input type="reset" value="reset"/>
+        </form>
+    </body>
+</html>

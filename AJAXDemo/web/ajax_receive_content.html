@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Ajax receive content</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>    
+    <body>
+        <script language="Javascript">
+        var xmlHttp;
+        function createXMLHttp() {
+            if(window.XMLHttpRequest) {
+                xmlHttp = new XMLHttpRequest();
+            } else {
+                xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
+            }
+        }
+        function showMsg() {
+            createXMLHttp();
+            xmlHttp.open("POST","content.html");
+            xmlHttp.onreadystatechange = showMsgCallback;
+            xmlHttp.send(null);
+        }
+        function showMsgCallback() {
+            if(xmlHttp.readyState == 4) {
+                var text = xmlHttp.responseText;
+                document.getElementById("msg").className = "css file name";
+                document.getElementById("msg").innerHTML = text;
+            }
+        }
+    </script>
+        <h1>Ajax receive content</h1>
+        <input type="button" onclick="showMsg()" value="Use Ajax to show content"/>
+        <span id="msg"></span>
+    </body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>ajax xml select demo</title>
+        <script language = "JavaScript">
+            var xmlHttp;
+            function createXMLHttp() {
+                if (window.XMLHttpRequest) {
+                    xmlHttp = new XMLHttpRequest();
+                } else {
+                    xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
+                }
+            }
+            function getFood() {
+                createXMLHttp();
+                xmlHttp.open("POST", "03.xml");
+                xmlHttp.onreadystatechange = getFoodCallback;
+                xmlHttp.send(null);
+            }
+            function getFoodCallback() {
+                if (xmlHttp.readyState == 4) {
+                    if (xmlHttp.status == 200) {
+                        var foodlist = xmlHttp.responseXML.getElementsByTagName("foodlist")[0].childNodes;
+                        var select = document.getElementById("dropdown");
+                        select.length = 1;
+                        select.options[0].selected = true;
+                        alert("list size" + foodlist.length);
+                        for (var i = 0; i < foodlist.length; i++) {
+                            alert("loop " + i);
+                            var food = foodlist[i];
+                            alert("step 1");
+                            var option = document.createElement("option");
+                            alert("step 2");
+                            /*we must separate getting the list and getting the nodevalue into 2 parts otherwise wont work*/
+                            /*chrome not friendly to ajax xml.. so dont play with chrome*/
+                            var namelist = food.getElementsByTagName("name");
+                            alert("step 2.1");
+                            var name = namelist.length ? namelist[0].firstChild.nodeValue : '';
+                            alert("step 3");
+                            var descriptionlist = food.getElementsByTagName("description");
+                            var description = descriptionlist.length ? descriptionlist[0].firstChild.nodeValue : '';
+                            alert("step 4");
+                            option.setAttribute("value", name);
+                            alert("step 5");
+                            option.appendChild(document.createTextNode(description));
+                            alert("step 6");
+                            select.appendChild(option);
+                            alert("step 7");
+                        }                        
+                    }
+                }
+            }
+        </script>
+    </head>    
+    <body onload = "getFood()"> 
+
+        <h1>ajax xml select demo</h1>
+        <form action = "" method = "post">
+            <span id = "msg"></span><br/>
+            <!--remember here the dropdown must be id but not name!!!!!!-->
+            <select id = "dropdown">
+                <option value = "0">-Please choose food-<option>
+            </select>
+        </form>
+    </body>
+</html>
