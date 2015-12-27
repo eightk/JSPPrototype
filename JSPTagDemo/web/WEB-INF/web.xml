@@ -11,6 +11,10 @@
             <taglib-location>/WEB-INF/tlds/hellotag.tld</taglib-location>
         </taglib>
         <taglib>
+            <taglib-uri>func_tag</taglib-uri>
+            <taglib-location>/WEB-INF/tlds/functag.tld</taglib-location>
+        </taglib>
+        <taglib>
             <taglib-uri>date_tag</taglib-uri>
             <taglib-location>/WEB-INF/tlds/datetag.tld</taglib-location>
         </taglib>

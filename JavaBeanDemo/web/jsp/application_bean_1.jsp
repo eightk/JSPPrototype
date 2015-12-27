@@ -6,6 +6,7 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <jsp:useBean id = "count" scope="application" class = "javabean.basic.demo.Count"/>
+<jsp:useBean id = "emp" class = "javabean.dao.demo.vo.Emp"/>
 <!DOCTYPE html>
 <html>
     <head>
@@ -14,6 +15,9 @@
     </head>
     <body>
         <h1>Application Bean</h1>
+        <br/>
+        test: ${emp.test}
+        <br/>
         <h3> <jsp:getProperty property="count" name="count"/> times access</h3>
             <jsp:forward page="application_bean_2.jsp"/>
     </body>

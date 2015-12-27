@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taglib version="2.1" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-jsptaglibrary_2_1.xsd">
+  <tlib-version>1.0</tlib-version>
+  <short-name>simpletagsupport</short-name>
+  <uri>/WEB-INF/tlds/simpleTagSupport</uri>
+  <tag>
+    <description>worst use of custom tag</description>
+    <name>simple1</name>
+    <tag-class>custom.tag.demo.SimpleTagTest1</tag-class>
+    <body-content>empty</body-content>
+  </tag>
+  
+  <tag>
+    <description>invoke body</description>
+    <name>simple2</name>
+    <tag-class>custom.tag.demo.SimpleTagTest2</tag-class>
+    <body-content>scriptless</body-content>
+  </tag>
+  
+  <tag>
+    <description>loop</description>
+    <name>simple4</name>
+    <tag-class>custom.tag.demo.SimpleTagTest4</tag-class>
+    <body-content>scriptless</body-content>
+  </tag>
+  
+  <tag>
+    <description>attribute</description>
+    <name>simple5</name>
+    <tag-class>custom.tag.demo.SimpleTagTest5</tag-class>
+    <body-content>scriptless</body-content>
+    <attribute>
+        <name>movieList</name>
+        <required>true</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+  
+  <tag>
+    <description>skippage</description>
+    <name>simple6</name>
+    <tag-class>custom.tag.demo.SimpleTagTest6</tag-class>
+    <body-content>scriptless</body-content>
+  </tag>
+  <!-- A validator verifies that the tags are used correctly at JSP
+          translation time. Validator entries look like this: 
+       <validator>
+           <validator-class>com.mycompany.TagLibValidator</validator-class>
+           <init-param>
+              <param-name>parameter</param-name>
+              <param-value>value</param-value>
+           </init-param>
+       </validator>
+    -->
+  <!-- A tag library can register Servlet Context event listeners in
+         case it needs to react to such events. Listener entries look
+         like this: 
+      <listener>
+          <listener-class>com.mycompany.TagLibListener</listener-class> 
+      </listener>
+    -->
+</taglib>

@@ -77,6 +77,10 @@ public class Emp {
         this.deptno = deptno;
     }
     
+    public Integer getTest() {
+        return test;
+    }
+    
     private Integer empno;
     private String ename;
     private String job;
@@ -85,4 +89,5 @@ public class Emp {
     private Double comm;
     private Integer mgr;
     private Integer deptno;
+    private Integer test;
 }
