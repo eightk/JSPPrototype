@@ -1,164 +1,164 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 
 <web-app xmlns="http://java.sun.com/xml/ns/javaee"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
-    version="2.5">
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+         version="2.5">
 	
-	<!--Filter should place at the beginning-->
-	<filter>
-		<filter-name> simple </filter-name>
-		<filter-class> servlet.demo.filter.SimpleFilter</filter-class>
-		<init-param>
-			<param-name>ref</param-name>
-			<param-value>HELLO REF</param-value>
-		</init-param>
-	</filter>
+    <!--Filter should place at the beginning-->
+    <filter>
+        <filter-name> simple </filter-name>
+        <filter-class> servlet.demo.filter.SimpleFilter</filter-class>
+        <init-param>
+            <param-name>ref</param-name>
+            <param-value>HELLO REF</param-value>
+        </init-param>
+    </filter>
 	
-	<filter-mapping> 
-		<filter-name>simple</filter-name>
-		<url-pattern>/JSP/*</url-pattern>
-	</filter-mapping>
+    <filter-mapping> 
+        <filter-name>simple</filter-name>
+        <url-pattern>/JSP/*</url-pattern>
+    </filter-mapping>
 	
-	<!--If it is not the last filter, we must put chain.doFilter in the doFilter method otherwise it will block the after filter from executing and it will block the website as well.-->
-	<filter>
-		<filter-name>encoding</filter-name>
-		<filter-class> servlet.demo.filter.EncodingFilter</filter-class>
-		<init-param>
-			<param-name>charset</param-name>
-			<param-value>UTF-8</param-value>
-		</init-param>
-	</filter>
+    <!--If it is not the last filter, we must put chain.doFilter in the doFilter method otherwise it will block the after filter from executing and it will block the website as well.-->
+    <filter>
+        <filter-name>encoding</filter-name>
+        <filter-class> servlet.demo.filter.EncodingFilter</filter-class>
+        <init-param>
+            <param-name>charset</param-name>
+            <param-value>UTF-8</param-value>
+        </init-param>
+    </filter>
 	
-	<filter-mapping> 
-		<filter-name>encoding</filter-name>
-		<url-pattern>/JSP/*</url-pattern>
-	</filter-mapping>
+    <filter-mapping> 
+        <filter-name>encoding</filter-name>
+        <url-pattern>/JSP/*</url-pattern>
+    </filter-mapping>
 	
-	<filter>
-		<filter-name> login </filter-name>
-		<filter-class> servlet.demo.filter.LoginFilter</filter-class>
-	</filter>
+    <filter>
+        <filter-name> login </filter-name>
+        <filter-class> servlet.demo.filter.LoginFilter</filter-class>
+    </filter>
 	
-	<filter-mapping> 
-		<filter-name>login</filter-name>
-		<url-pattern>/JSP/login.jsp</url-pattern>
-	</filter-mapping>
+    <filter-mapping> 
+        <filter-name>login</filter-name>
+        <url-pattern>/JSP/login.jsp</url-pattern>
+    </filter-mapping>
 	
-	<!--Then Listener-->
-	<listener>
-		<listener-class>				servlet.demo.listener.ServletContextListenerDemo
-		</listener-class>		
-	</listener>
+    <!--Then Listener-->
+    <listener>
+        <listener-class>				servlet.demo.listener.ServletContextListenerDemo
+        </listener-class>		
+    </listener>
 	
-	<listener>
-		<listener-class>				servlet.demo.listener.ServletContextAttributeListenerDemo
-		</listener-class>		
-	</listener>
+    <listener>
+        <listener-class>				servlet.demo.listener.ServletContextAttributeListenerDemo
+        </listener-class>		
+    </listener>
 	
-	<listener>
-		<listener-class>				servlet.demo.listener.HttpSessionListenerDemo
-		</listener-class>		
-	</listener>
+    <listener>
+        <listener-class>				servlet.demo.listener.HttpSessionListenerDemo
+        </listener-class>		
+    </listener>
 	
-	<listener>
-		<listener-class>				servlet.demo.listener.ServletRequestListenerDemo
-		</listener-class>		
-	</listener>
+    <listener>
+        <listener-class>				servlet.demo.listener.ServletRequestListenerDemo
+        </listener-class>		
+    </listener>
 	
-	<listener>
-		<listener-class>				servlet.demo.listener.ServletRequestAttributeListenerDemo
-		</listener-class>		
-	</listener>
+    <listener>
+        <listener-class>				servlet.demo.listener.ServletRequestAttributeListenerDemo
+        </listener-class>		
+    </listener>
 	
-	<listener>
-		<listener-class>				servlet.demo.listener.OnlineUserList
-		</listener-class>		
-	</listener>
+    <listener>
+        <listener-class>				servlet.demo.listener.OnlineUserList
+        </listener-class>		
+    </listener>
 	
-	<!--Then Servlet-->
-	<servlet> 
-		<servlet-name>hello</servlet-name>
-		<servlet-class>servlet.demo.HelloServlet</servlet-class>
-	</servlet>
-	<servlet-mapping> 
-		<servlet-name>hello</servlet-name>
-		<url-pattern>/helloServlet</url-pattern>
-	</servlet-mapping>
+    <!--Then Servlet-->
+    <servlet> 
+        <servlet-name>hello</servlet-name>
+        <servlet-class>servlet.demo.HelloServlet</servlet-class>
+    </servlet>
+    <servlet-mapping> 
+        <servlet-name>hello</servlet-name>
+        <url-pattern>/helloServlet</url-pattern>
+    </servlet-mapping>
 	
-	<servlet> 
-		<servlet-name>input</servlet-name>
-		<servlet-class>servlet.demo.InputServlet</servlet-class>
-	</servlet>
-	<servlet-mapping> 
-		<servlet-name>input</servlet-name>
-		<url-pattern>/inputServlet</url-pattern>
-	</servlet-mapping>
+    <servlet> 
+        <servlet-name>input</servlet-name>
+        <servlet-class>servlet.demo.InputServlet</servlet-class>
+    </servlet>
+    <servlet-mapping> 
+        <servlet-name>input</servlet-name>
+        <url-pattern>/inputServlet</url-pattern>
+    </servlet-mapping>
 	
-	<servlet> 
-		<servlet-name>initParam</servlet-name>
-		<servlet-class>servlet.demo.InitParamServlet</servlet-class>
-		<init-param>
-			<param-name> ref </param-name>
-			<param-value> this is the value </param-value>
-		</init-param>
-	</servlet>
-	<servlet-mapping> 
-		<servlet-name>initParam</servlet-name>
-		<url-pattern>/initParamServlet</url-pattern>
-	</servlet-mapping>
+    <servlet> 
+        <servlet-name>initParam</servlet-name>
+        <servlet-class>servlet.demo.InitParamServlet</servlet-class>
+        <init-param>
+            <param-name> ref </param-name>
+            <param-value> this is the value </param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping> 
+        <servlet-name>initParam</servlet-name>
+        <url-pattern>/initParamServlet</url-pattern>
+    </servlet-mapping>
 	
-	<servlet> 
-		<servlet-name>httpSession</servlet-name>
-		<servlet-class>servlet.demo.HttpSessionDemoServlet</servlet-class>
-	</servlet>
-	<servlet-mapping> 
-		<servlet-name>httpSession</servlet-name>
-		<url-pattern>/httpSessionDemoServlet</url-pattern>
-	</servlet-mapping>
+    <servlet> 
+        <servlet-name>httpSession</servlet-name>
+        <servlet-class>servlet.demo.HttpSessionDemoServlet</servlet-class>
+    </servlet>
+    <servlet-mapping> 
+        <servlet-name>httpSession</servlet-name>
+        <url-pattern>/httpSessionDemoServlet</url-pattern>
+    </servlet-mapping>
 	
-	<servlet> 
-		<servlet-name>ServletContext</servlet-name>
-		<servlet-class>servlet.demo.ServletContextDemoServlet</servlet-class>
-	</servlet>
-	<servlet-mapping> 
-		<servlet-name>ServletContext</servlet-name>
-		<url-pattern>/servletContextDemoServlet</url-pattern>
-	</servlet-mapping>
+    <servlet> 
+        <servlet-name>ServletContext</servlet-name>
+        <servlet-class>servlet.demo.ServletContextDemoServlet</servlet-class>
+    </servlet>
+    <servlet-mapping> 
+        <servlet-name>ServletContext</servlet-name>
+        <url-pattern>/servletContextDemoServlet</url-pattern>
+    </servlet-mapping>
 	
-	<servlet> 
-		<servlet-name>ClientRedirect</servlet-name>
-		<servlet-class>servlet.demo.ClientRedirectDemo</servlet-class>
-	</servlet>
-	<servlet-mapping> 
-		<servlet-name>ClientRedirect</servlet-name>
-		<url-pattern>/clientRedirectDemo</url-pattern>
-	</servlet-mapping>
+    <servlet> 
+        <servlet-name>ClientRedirect</servlet-name>
+        <servlet-class>servlet.demo.ClientRedirectDemo</servlet-class>
+    </servlet>
+    <servlet-mapping> 
+        <servlet-name>ClientRedirect</servlet-name>
+        <url-pattern>/clientRedirectDemo</url-pattern>
+    </servlet-mapping>
 	
-	<servlet> 
-		<servlet-name>ServerRedirect</servlet-name>
-		<servlet-class>servlet.demo.ServerRedirectDemo</servlet-class>
-	</servlet>
-	<servlet-mapping> 
-		<servlet-name>ServerRedirect</servlet-name>
-		<url-pattern>/serverRedirectDemo</url-pattern>
-	</servlet-mapping>
+    <servlet> 
+        <servlet-name>ServerRedirect</servlet-name>
+        <servlet-class>servlet.demo.ServerRedirectDemo</servlet-class>
+    </servlet>
+    <servlet-mapping> 
+        <servlet-name>ServerRedirect</servlet-name>
+        <url-pattern>/serverRedirectDemo</url-pattern>
+    </servlet-mapping>
 	
-	<servlet> 
-		<servlet-name>Login</servlet-name>
-		<servlet-class>servlet.demo.mvc.controller.LoginServlet</servlet-class>
-	</servlet>
-	<servlet-mapping> 
-		<servlet-name>Login</servlet-name>
-		<url-pattern>/JSP/LoginServlet</url-pattern>
-	</servlet-mapping>
+    <servlet> 
+        <servlet-name>Login</servlet-name>
+        <servlet-class>servlet.demo.mvc.controller.LoginServlet</servlet-class>
+    </servlet>
+    <servlet-mapping> 
+        <servlet-name>Login</servlet-name>
+        <url-pattern>/JSP/LoginServlet</url-pattern>
+    </servlet-mapping>
 	
 	
 	
-	<display-name> Welcome to Tomcat </display-name>
+    <display-name> Welcome to Tomcat </display-name>
 
     <description>
-		Welcome to Tomcat
-	</description>
+        Welcome to Tomcat
+    </description>
 
 </web-app>
