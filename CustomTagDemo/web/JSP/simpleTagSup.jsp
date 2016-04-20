@@ -4,7 +4,7 @@
     Author     : hp
 --%>
 
-<%@page import="java.util.ArrayList"%>
+<%@page import="java.util.ArrayList" autoFlush="true"%>
 <%@page import="java.util.List"%>
 <%@page import="java.util.List"%>
 <%@page import="custom.tag.model.Movie"%>

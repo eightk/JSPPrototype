@@ -29,6 +29,7 @@
     </script>
     <body>
         <h1>MVC Login Page</h1>
+
         <%
             List<String> info = (List<String>) request.getAttribute("info");
             if (info != null) {
